@@ -46,6 +46,7 @@ Plug 'tpope/vim-rails'
 Plug 'rust-lang/rust.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'vim-python/python-syntax'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 call plug#end()
@@ -109,3 +110,5 @@ let g:limelight_eop = '\ze\n^\s'
 let g:limelight_priority = -1
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+let g:python_highlight_all = 1
