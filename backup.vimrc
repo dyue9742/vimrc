@@ -12,6 +12,7 @@ if has('gui_running')
 	set guioptions-=L
 endif
 
+set hlsearch incsearch
 set ignorecase smartcase
 set number relativenumber
 set splitbelow splitright
@@ -34,6 +35,10 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'nanotech/jellybeans.vim', { 'tag': 'v1.7' }
+Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
+Plug 'joshdick/onedark.vim'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'elzr/vim-json'
@@ -112,3 +117,7 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
 let g:python_highlight_all = 1
+
+set background=dark
+let g:gruvbox_contrast_hard = 1
+colorscheme gruvbox
