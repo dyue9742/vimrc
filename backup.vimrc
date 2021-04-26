@@ -24,6 +24,7 @@ set backspace=eol,indent,start
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-fugitive'
