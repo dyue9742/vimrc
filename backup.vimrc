@@ -12,6 +12,7 @@ if has('gui_running')
 	set guioptions-=L
 endif
 
+set ruler cursorline
 set hlsearch incsearch
 set ignorecase smartcase
 set number relativenumber
@@ -35,24 +36,7 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'nanotech/jellybeans.vim', { 'tag': 'v1.7' }
-Plug 'morhetz/gruvbox'
-Plug 'tomasr/molokai'
-Plug 'joshdick/onedark.vim'
-Plug 'othree/html5.vim'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'elzr/vim-json'
-Plug 'pangloss/vim-javascript'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'leafgarland/typescript-vim'
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-rails'
-Plug 'rust-lang/rust.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'vim-python/python-syntax'
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 call plug#end()
 
@@ -95,29 +79,3 @@ let g:cpp_posix_standard = 1
 let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_concepts_highlight = 1
 
-" Color name (:help cterm-colors) or ANSI code
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
-" Color name (:help gui-colors) or RGB color
-let g:limelight_conceal_guifg = 'DarkGray'
-let g:limelight_conceal_guifg = '#777777'
-" Default: 0.5
-let g:limelight_default_coefficient = 0.7
-" Number of preceding/following paragraphs to include (default: 0)
-let g:limelight_paragraph_span = 1
-" Beginning/end of paragraph
-"   When there's no empty line between the paragraphs
-"   and each paragraph starts with indentation
-let g:limelight_bop = '^\s'
-let g:limelight_eop = '\ze\n^\s'
-" Highlighting priority (default: 10)
-"   Set it to -1 not to overrule hlsearch
-let g:limelight_priority = -1
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
-
-let g:python_highlight_all = 1
-
-set background=dark
-let g:gruvbox_contrast_hard = 1
-colorscheme gruvbox
