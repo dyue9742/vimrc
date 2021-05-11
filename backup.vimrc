@@ -3,9 +3,9 @@ filetype plugin indent on
 syntax enable
 
 if has('gui_running')
-	set guifont=JetBrainsMono\ Nerd\ Font\ 13
+	set guifont=JetBrainsMono_Nerd_Font:h19
 	set termwinsize=10*0
-	set lines=33 columns=130
+	set lines=42 columns=140
 	set guioptions-=T
 	set guioptions-=m
 	set guioptions-=r
@@ -37,8 +37,13 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'vim-python/python-syntax'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 call plug#end()
+
+map <F7> gg=G<C-o><C-o>
 
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -47,10 +52,10 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " Start NERDTree when Vim starts with a directory argument.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
-    \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
+			\ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-    \ quit | endif
+			\ quit | endif
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
@@ -60,17 +65,17 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'default'
 
 let g:NERDTreeGitStatusIndicatorMapCustom = {
-                \ 'Modified'  :'✹',
-                \ 'Staged'    :'✚',
-                \ 'Untracked' :'✭',
-                \ 'Renamed'   :'➜',
-                \ 'Unmerged'  :'═',
-                \ 'Deleted'   :'✖',
-                \ 'Dirty'     :'✗',
-                \ 'Ignored'   :'☒',
-                \ 'Clean'     :'✔︎',
-                \ 'Unknown'   :'?',
-                \ }
+			\ 'Modified'  :'✹',
+			\ 'Staged'    :'✚',
+			\ 'Untracked' :'✭',
+			\ 'Renamed'   :'➜',
+			\ 'Unmerged'  :'═',
+			\ 'Deleted'   :'✖',
+			\ 'Dirty'     :'✗',
+			\ 'Ignored'   :'☒',
+			\ 'Clean'     :'✔︎',
+			\ 'Unknown'   :'?',
+			\ }
 
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 2
@@ -78,4 +83,7 @@ let g:cpp_class_decl_highlight = 1
 let g:cpp_posix_standard = 1
 let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_concepts_highlight = 1
+let g:vim_jsx_pretty_colorful_config = 1
+let g:python_highlight_all = 1
 
+let g:airline_theme='base16'
